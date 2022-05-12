@@ -6,8 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.services.UserService;
@@ -26,10 +28,7 @@ public class LoginController {
     private AnchorPane openregisterpane;
 
     @FXML
-    private TextField password;
-
-    @FXML
-    private Button registerButton;
+    private PasswordField password;
 
     @FXML
     private Text tryagain;
