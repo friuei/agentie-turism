@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="regpane" minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
    <children>
-      <TextField fx:id="usernameField" layoutX="229.0" layoutY="111.0" promptText="Username" />
+      <TextField fx:id="usernameField" layoutX="224.0" layoutY="109.0" promptText="Username" />
       <PasswordField fx:id="passwordField" layoutX="224.0" layoutY="165.0" promptText="Password" />
       <ChoiceBox fx:id="role" layoutX="225.0" layoutY="216.0" onDragDetected="#initialize" prefWidth="150.0" />
       <Text fill="#f70202" layoutX="246.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
@@ -20,27 +20,30 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Text>
-      <Button fx:id="registerButton" layoutX="268.0" layoutY="260.0" mnemonicParsing="false" onAction="#registerButtonOnAction" text="Register" textFill="#f70202" />
+      <Button fx:id="registerButton" layoutX="268.0" layoutY="260.0" mnemonicParsing="false" onAction="#registerButtonOnAction" text="Register" textFill="#f70202">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Button fx:id="goBackButton" layoutX="268.0" layoutY="318.0" mnemonicParsing="false" onAction="#goBackButtonOnAction" text="Go Back" textFill="#f70202" />
       <ImageView fitHeight="133.0" fitWidth="102.0" layoutX="14.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/register2.jpg" />
+            <Image url="@../../images/register2.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="134.0" fitWidth="200.0" layoutX="386.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/register3.jpg" />
+            <Image url="@../../images/register3.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="486.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/Register1.jpg" />
+            <Image url="@../../images/Register1.jpg" />
          </image>
       </ImageView>
       <Text fill="#f70202" layoutX="153.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
       <Text fill="#f70202" layoutX="154.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
       <Text fill="#f70202" layoutX="174.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role" wrappingWidth="39.58304786682129" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="registrationMessage" fill="#f70202" layoutX="289.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+      <Text fx:id="registrationMessage" fill="#f70202" layoutX="126.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="333.60009765625" />
    </children>
 </AnchorPane>
