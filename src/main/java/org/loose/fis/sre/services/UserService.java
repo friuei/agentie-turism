@@ -57,5 +57,25 @@ public class UserService {
         return md;
     }
 
+    public static int validateLogin(String username, String password) {
+        for (User user : userRepository.find()) {
+            if(Objects.equals(username, user.getUsername()))
+            {
+                String pass=encodePassword(username,password);
 
+                if (Objects.equals(user.getPassword(),pass))
+                {
+                    if(Objects.equals(user.getRole(),"Agent")){
+                        return 1;
+
+                    }
+                    if(Objects.equals(user.getRole(),"Client")){
+                        return 2;
+                    }
+                }
+            }
+        }
+        return 0;
+
+    }
 }

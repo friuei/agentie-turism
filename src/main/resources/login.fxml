@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="openregisterpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+    <children>
+        <AnchorPane layoutX="1.0" prefHeight="400.0" prefWidth="300.0">
+            <children>
+                <ImageView fitHeight="400.0" fitWidth="245.0" layoutX="-7.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../../images/loginimage.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="215.0" layoutY="3.0" prefHeight="400.0" prefWidth="378.0">
+            <children>
+                <TextField fx:id="username" layoutX="173.0" layoutY="125.0" />
+                <TextField fx:id="password" layoutX="173.0" layoutY="177.0" />
+                <ImageView fitHeight="77.0" fitWidth="86.0" layoutX="209.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/lock.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="105.0" layoutY="128.0" prefHeight="18.0" prefWidth="60.0" text="Username" textFill="#0d57df" />
+                <Label layoutX="110.0" layoutY="181.0" text="Password" textFill="#0d57df" />
+                <Button fx:id="loginbutton" layoutX="220.0" layoutY="214.0" mnemonicParsing="false" onAction="#loginButtonOnAction" text="LOGIN" textFill="#ef093b">
+                    <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="gobackButton" layoutX="213.0" layoutY="258.0" mnemonicParsing="false" text="GO BACK" textFill="#ef093b">
+                    <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="registerButton" layoutX="211.0" layoutY="347.0" mnemonicParsing="false" text="REGISTER" textFill="#ef093b">
+                    <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                    </font>
+                </Button>
+                <Text fx:id="tryagain" fill="#fa0000" layoutX="207.0" layoutY="319.0" stroke="#611e1e" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </Text>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
