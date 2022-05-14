@@ -6,12 +6,16 @@ public class User {
     private String username;
     private String password;
     private String role;
+    private int status;
+    private String programare;
 
 
-    public User(String username, String password, String role) {
+    public User(String username, String password, String role, String programare, int status) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.status = status;
+        this.programare = programare;
     }
 
     public User() {
@@ -40,6 +44,12 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public int getStatus(){ return status;}
+
+    public void setStatus(int status){this.status = status;}
+
+    public void setProgramare(String progrmare){this.programare=this.programare+progrmare;}
 
     @Override
     public boolean equals(Object o) {
