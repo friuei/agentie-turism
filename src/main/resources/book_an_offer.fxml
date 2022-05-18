@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorpane" prefHeight="680.0" prefWidth="675.0" style="-fx-background-color: #f4e7d5;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Client.ClientBookOfferController">
+<AnchorPane fx:id="anchorpane" prefHeight="680.0" prefWidth="675.0" style="-fx-background-color: \\;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Client.ClientBookOfferController">
     <children>
 
         <ComboBox fx:id="cb1" layoutX="101.0" layoutY="165.0" prefWidth="150.0" promptText="Agent" visible="false" />

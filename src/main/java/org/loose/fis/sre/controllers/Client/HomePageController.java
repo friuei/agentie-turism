@@ -15,7 +15,8 @@ public class HomePageController {
 
     @FXML
     private Button bookanoffer;
-
+    @FXML    
+    private AnchorPane ancortochange;
     @FXML
     private AnchorPane change;
 
@@ -45,8 +46,8 @@ public class HomePageController {
 
     @FXML
     void homePageOnAction(ActionEvent event) throws IOException {
-        AnchorPane pane= FXMLLoader.load(getClass().getClassLoader().getResource("instructors_client.fxml"));
-        change.getChildren().setAll(pane);
+        AnchorPane pane= FXMLLoader.load(getClass().getClassLoader().getResource("clienthomepage.fxml"));
+        ancortochange.getChildren().setAll(pane);
     }
 
     @FXML
@@ -63,19 +64,20 @@ public class HomePageController {
 
     @FXML
     void reviewAnOffer(ActionEvent event) throws IOException {
-        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("instructors_client.fxml"));
+        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("review_an_offer.fxml"));
         change.getChildren().setAll(pane);
     }
 
     @FXML
     void seeOffersOnAction(ActionEvent event) throws IOException {
-        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("instructors_client.fxml"));
+        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("client_offers.fxml"));
         change.getChildren().setAll(pane);
     }
 
     @FXML
-    void seeRequestOnAction(ActionEvent event) {
-
+    void seeRequestOnAction(ActionEvent event) throws IOException {
+        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("client_requests.fxml"));
+        change.getChildren().setAll(pane);
     }
 
 }
