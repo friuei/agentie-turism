@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import org.loose.fis.sre.services.UserService;
-import javax.validation.constraints.Null;
+
 import java.io.IOException;
 import javafx.scene.image.ImageView ;
 import org.loose.fis.sre.model.User;
@@ -58,7 +58,7 @@ public class ClientBookOfferController {
         UserService.getAgents(list1);
         cb1.getItems().addAll(list1);
 
-        for(int i=0;i<=30;i++)
+        for(int i=1;i<=31;i++)
             cb2.getItems().add(i);
         cb3.getItems().addAll("1","2","3","4","5","6","7","8","9","10","11","12");
         ok.setDisable(true);
@@ -82,7 +82,7 @@ public class ClientBookOfferController {
         String l=cb3.getSelectionModel().getSelectedItem().toString();
         String nu=username.getText();
         String mes=message.getText();
-        String progC="Nume instructor:"+ni +"\n"+"Data:"+z+"/"+l;
+        String progC="Nume agent:"+ni +"\n"+"Data:"+z+"/"+l;
         String progI="Nume utilizator:"+nu +"\n"+"Data:"+z+"/"+l+"\n"+"Detalii:"+mes;
 
 
