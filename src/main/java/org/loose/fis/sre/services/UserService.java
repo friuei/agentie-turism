@@ -1,5 +1,6 @@
 package org.loose.fis.sre.services;
 
+import javafx.collections.ObservableList;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
@@ -26,7 +27,7 @@ public class UserService {
 
     public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role));
+        userRepository.insert(new User(username, encodePassword(username, password), role,"",-1));
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -55,6 +56,56 @@ public class UserService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return md;
+    }
+
+    public static void getAgents(ObservableList<String> names){
+        try{
+            for (User user : userRepository.find()){
+                if(Objects.equals("Agent",user.getRole())){
+                    names.add(user.getUsername());
+
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static int checkUser(String nume){
+        for(User user: userRepository.find())
+            if(Objects.equals(user.getUsername(),nume)) {
+                return 1;
+
+            }
+        return 0;
+    }
+
+    public static int checkStatus(String nume){
+        for(User user: userRepository.find()) {
+            if(Objects.equals(user.getUsername(),nume)){
+                return user.getStatus();
+            }
+        }
+        return -2;
+    }
+
+    public static void addProgramare(String nume,String programare){
+        for(User user: userRepository.find())
+            if(Objects.equals(user.getUsername(),nume)) {
+                user.setProgramare(programare);
+                user.setStatus(0);
+                userRepository.update(user);
+
+            }
+    }
+
+    public static void setUserStatus(String nume,int s){
+        for(User user: userRepository.find())
+            if(Objects.equals(user.getUsername(),nume)){
+                user.setStatus(s);
+                userRepository.update(user);
+
+            }
     }
 
     public static int validateLogin(String username, String password) {
