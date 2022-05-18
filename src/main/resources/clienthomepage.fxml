@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="ancortochange" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Client.HomePageController">
+<AnchorPane fx:id="ancortochange" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Client.HomePageController">
    <children>
       <AnchorPane fx:id="homepageanc" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #3FB9EE;">
          <children>
@@ -34,7 +36,7 @@
                   <Image url="@images/homepage.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="review" layoutX="50.0" layoutY="186.0" mnemonicParsing="false" onAction="#reviewAnOffer" prefHeight="30.0" prefWidth="250.0" text="Review an offer">
+            <Button fx:id="review" layoutX="50.0" layoutY="186.0" mnemonicParsing="false" onAction="#reviewAnAgency" prefHeight="30.0" prefWidth="250.0" text="Review an agency">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

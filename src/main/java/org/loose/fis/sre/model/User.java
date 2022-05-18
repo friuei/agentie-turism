@@ -8,15 +8,17 @@ public class User {
     private String role;
     private int status;
     private String programare;
+    private String review;
 
 
 
-    public User(String username, String password, String role, String programare, int status) {
+    public User(String username, String password, String role, String programare, String review, int status) {
         this.username = username;
         this.password = password;
         this.role = role;
         this.status = status;
         this.programare = programare;
+        this.review = review;
 
     }
 
@@ -53,6 +55,10 @@ public class User {
     public void setStatus(int status){this.status = status;}
 
     public void setProgramare(String progrmare){this.programare=this.programare+progrmare;}
+
+    public void setReview(String review){this.review=review;}
+
+    public String getReview(){return review;}
 
     @Override
     public boolean equals(Object o) {

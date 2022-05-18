@@ -63,8 +63,8 @@ public class HomePageController {
     }
 
     @FXML
-    void reviewAnOffer(ActionEvent event) throws IOException {
-        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("review_an_offer.fxml"));
+    void reviewAnAgency(ActionEvent event) throws IOException {
+        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("review_client.fxml"));
         change.getChildren().setAll(pane);
     }
 
