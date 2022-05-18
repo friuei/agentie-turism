@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.model.Offer;
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -19,7 +20,7 @@ public class UserService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("registration-example.db").toFile())
+                .filePath(getPathToFile("user.db").toFile())
                 .openOrCreate("username", "password");
 
         userRepository = database.getRepository(User.class);
@@ -36,6 +37,7 @@ public class UserService {
                 throw new UsernameAlreadyExistsException(username);
         }
     }
+
 
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
@@ -98,6 +100,7 @@ public class UserService {
 
             }
     }
+
 
     public static void setUserStatus(String nume,int s){
         for(User user: userRepository.find())

@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="ancortochange" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Agent.AgentHomePageController">
    <children>
-      <AnchorPane fx:id="homepageanc" prefHeight="600.0" prefWidth="350.0" style="-fx-background-image: images\background.jpg;">
+      <AnchorPane fx:id="homepageanc" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #FFA8A8;">
          <children>
             <Button fx:id="logout" layoutX="50.0" layoutY="285.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="30.0" prefWidth="250.0" text="Log Out">
                <font>
@@ -48,7 +48,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="change" layoutX="350.0" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: #FFD297;">
+      <AnchorPane fx:id="change" layoutX="350.0" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: #FFDBDB;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="82.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
                <image>

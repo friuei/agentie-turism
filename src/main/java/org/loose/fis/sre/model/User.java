@@ -10,16 +10,19 @@ public class User {
     private String programare;
 
 
+
     public User(String username, String password, String role, String programare, int status) {
         this.username = username;
         this.password = password;
         this.role = role;
         this.status = status;
         this.programare = programare;
+
     }
 
     public User() {
     }
+
 
     public String getUsername() {
         return username;
