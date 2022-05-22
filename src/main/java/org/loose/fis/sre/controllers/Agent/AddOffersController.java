@@ -6,8 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import org.loose.fis.sre.model.Offer;
-import org.loose.fis.sre.services.OfferService;
+
 import org.loose.fis.sre.services.UserService;
 import javafx.scene.image.ImageView;
 public class AddOffersController {
@@ -47,7 +46,7 @@ public class AddOffersController {
 
     @FXML
     private TextField usernamefield;
-    String usr;
+     private String usr;
     @FXML
     private ImageView submitimage;
 
@@ -89,18 +88,22 @@ public class AddOffersController {
         String o=oras.getText();
         String p=pret.getText();
         String d=descriere.getText();
-        Offer offer;
-        if(t!=null||o!=null||p!=null){
-            offer=new Offer(usr,t,o,p,d);
-            OfferService.addOffer(offer);
+        String Offer="Agent:"+usr+"\nTara:"+t+"\nOras:"+o+"\nPret:"+p+"Lei"+"\nDescriere:"+d+"\n";
 
-            pret.setVisible(false);
-            tara.setVisible(false);
-            oras.setVisible(false);
-            descriere.setVisible(false);
-            addoffer.setVisible(false);
-            submitedtext.setVisible(true);
-            submitimage.setVisible(true);
+        if(t!=null||o!=null||p!=null){
+            if(UserService.addOffer(Offer,usr)>0) {
+                pret.setVisible(false);
+                tara.setVisible(false);
+                oras.setVisible(false);
+                descriere.setVisible(false);
+                addoffer.setVisible(false);
+                submitedtext.setVisible(true);
+                submitimage.setVisible(true);
+            }
+            else{
+                offertext.setText("You have already an offer ");
+                offertext.setVisible(true);
+            }
         }
         else {
             offertext.setVisible(true);

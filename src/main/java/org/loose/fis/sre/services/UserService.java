@@ -4,7 +4,7 @@ import javafx.collections.ObservableList;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
-import org.loose.fis.sre.model.Offer;
+
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -28,7 +28,7 @@ public class UserService {
 
     public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role,"","", -1));
+        userRepository.insert(new User(username, encodePassword(username, password), role,"","","e", -1));
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -80,6 +80,38 @@ public class UserService {
 
             }
         return 0;
+    }
+    public static int addOffer(String offer,String username){
+        for(User user:userRepository.find())
+            if(Objects.equals(user.getUsername(),username)){
+                if(user.getOffer().equals("e")) {
+                    user.setOffer(offer);
+                    userRepository.update(user);
+                    return  1;
+                }
+                else{
+                    return -1;
+                }
+            }
+        return -2;
+    }
+
+
+
+
+    public static String getOffers(String username){
+        for(User user:userRepository.find())
+            if(Objects.equals(user.getUsername(),username)) {
+                return user.getOffer();
+            }
+                return "Username not found";
+    }
+    public static void deleteOffers(String username ){
+        for(User user:userRepository.find())
+            if(Objects.equals(user.getUsername(),username)) {
+                user.setOffer("e");
+                userRepository.update(user);
+            }
     }
 
     public static int checkStatus(String nume){

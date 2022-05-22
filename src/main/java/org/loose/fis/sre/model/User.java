@@ -9,13 +9,25 @@ public class User {
     private int status;
     private String programare;
     private String review;
+    private String offer;
 
+    public String getProgramare() {
+        return programare;
+    }
 
+    public String getOffer() {
+        return this.offer;
+    }
 
-    public User(String username, String password, String role, String programare, String review, int status) {
+    public void setOffer(String offer) {
+        this.offer = offer;
+    }
+
+    public User(String username, String password, String role, String programare, String review,String offer, int status) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.offer=offer;
         this.status = status;
         this.programare = programare;
         this.review = review;
