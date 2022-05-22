@@ -66,7 +66,7 @@ public class User {
 
     public void setStatus(int status){this.status = status;}
 
-    public void setProgramare(String progrmare){this.programare=this.programare+progrmare;}
+    public void setProgramare(String progrmare){this.programare=""+programare;}
 
     public void setReview(String review){this.review=review;}
 

@@ -37,7 +37,14 @@ public class UserService {
                 throw new UsernameAlreadyExistsException(username);
         }
     }
+    public static void deleteProgramare(String username){
+        for(User user: userRepository.find())
+            if(Objects.equals(user.getUsername(),username)) {
+                user.setProgramare("");
+                userRepository.update(user);
+            }
 
+    }
 
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
