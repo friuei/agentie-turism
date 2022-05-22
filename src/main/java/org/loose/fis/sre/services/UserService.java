@@ -85,7 +85,7 @@ public class UserService {
                 return user.getProgramare();
             }
 
-            return null;
+        return null;
     }
 
     public static int checkUser(String nume){
@@ -119,7 +119,7 @@ public class UserService {
             if(Objects.equals(user.getUsername(),username)) {
                 return user.getOffer();
             }
-                return "Username not found";
+        return "Username not found";
     }
     public static void deleteOffers(String username ){
         for(User user:userRepository.find())
@@ -177,6 +177,14 @@ public class UserService {
                 userRepository.update(user);
 
             }
+    }
+
+    public static String returnOffers(String name){
+        for(User user: userRepository.find())
+            if(Objects.equals(user.getUsername(), name) && user.getOffer().length()!=0){
+                return user.getOffer();
+            }
+        return "No offers yet.";
     }
 
     public static int validateLogin(String username, String password) {
