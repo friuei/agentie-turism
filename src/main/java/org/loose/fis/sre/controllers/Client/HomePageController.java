@@ -32,8 +32,7 @@ public class HomePageController {
     @FXML
     private Button review;
 
-    @FXML
-    private Button seeRequest;
+
 
     @FXML
     private Button seeoffers;
@@ -73,11 +72,4 @@ public class HomePageController {
         AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("client_offers.fxml"));
         change.getChildren().setAll(pane);
     }
-
-    @FXML
-    void seeRequestOnAction(ActionEvent event) throws IOException {
-        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("client_requests.fxml"));
-        change.getChildren().setAll(pane);
-    }
-
 }

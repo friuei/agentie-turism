@@ -72,6 +72,14 @@ public class UserService {
             e.printStackTrace();
         }
     }
+    public static String getUserProgramare(String username){
+        for(User user: userRepository.find())
+            if(Objects.equals(user.getUsername(),username)) {
+                return user.getProgramare();
+            }
+
+            return null;
+    }
 
     public static int checkUser(String nume){
         for(User user: userRepository.find())
@@ -146,6 +154,14 @@ public class UserService {
         }
 
     }
+    public static String getUserReview(String name) {
+        for (User user : userRepository.find()) {
+            if (Objects.equals(name, user.getUsername())) {
+                return user.getReview();
+            }
+        }
+        return null;
+    }
 
     public static void setUserStatus(String nume,int s){
         for(User user: userRepository.find())
@@ -177,4 +193,5 @@ public class UserService {
         return 0;
 
     }
+
 }

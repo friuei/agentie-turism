@@ -41,11 +41,6 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="seeRequest" layoutX="50.0" layoutY="230.0" mnemonicParsing="false" onAction="#seeRequestOnAction" prefHeight="30.0" prefWidth="250.0" text="See Request">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="change" layoutX="350.0" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: BCECFF;">
