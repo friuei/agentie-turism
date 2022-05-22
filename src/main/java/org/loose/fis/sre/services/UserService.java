@@ -28,7 +28,7 @@ public class UserService {
 
     public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role,"","", -1));
+        userRepository.insert(new User(username, encodePassword(username, password), role,"","", "", -1));
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -122,6 +122,14 @@ public class UserService {
                 userRepository.update(user);
 
             }
+    }
+
+    public static String returnOffers(String name){
+        for(User user: userRepository.find())
+            if(Objects.equals(user.getUsername(), name) && user.getOffer().length()!=0){
+                return user.getOffer();
+            }
+        return "No offers yet.";
     }
 
     public static int validateLogin(String username, String password) {
