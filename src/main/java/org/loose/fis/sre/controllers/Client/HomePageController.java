@@ -69,7 +69,7 @@ public class HomePageController {
 
     @FXML
     void seeOffersOnAction(ActionEvent event) throws IOException {
-        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("client_offers.fxml"));
+        AnchorPane pane=FXMLLoader.load(getClass().getClassLoader().getResource("seeoffers.fxml"));
         change.getChildren().setAll(pane);
     }
 }
